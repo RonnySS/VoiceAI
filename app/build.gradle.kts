@@ -5,15 +5,15 @@ plugins {
 
 
 android {
-    compileSdk = 32
-//    buildToolsVersion = AppConfig.buildToolsVersion
+    compileSdk = AppConfig.compileSdk
+    buildToolsVersion = AppConfig.buildToolsVersion
 
     defaultConfig {
-        applicationId = "com.redbone.voiceai"
-        minSdk = 21
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = AppConfig.applicationId
+        minSdk = AppConfig.minSdk
+        targetSdk = AppConfig.targetSdk
+        versionCode = AppConfig.versionCode
+        versionName = AppConfig.versionName
 
     }
 
@@ -58,8 +58,8 @@ android {
 
 dependencies {
 
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("androidx.core:core-ktx:1.3.2")
-    implementation("com.google.android.material:material:1.3.0")
+    implementation(DependenciesConfig.KTX_CORE)
+    implementation(DependenciesConfig.APP_COMPAT)
+    implementation(DependenciesConfig.MATERIAL)
 //    implementation(DependenciesConfig.APP_COMPAT)
 }
