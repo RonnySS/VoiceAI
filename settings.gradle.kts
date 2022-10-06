@@ -6,4 +6,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "VoiceAI"
-include ':app'
+include(":app")
+rootProject.buildFileName = "build.gradle.kts"
