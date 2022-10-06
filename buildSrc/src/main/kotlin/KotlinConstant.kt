@@ -20,3 +20,7 @@ object DependenciesConfig{
     const val KTX_CORE = "androidx.core:core-ktx:1.3.2"
     const val MATERIAL = "com.google.android.material:material:1.3.0"
 }
+
+object ModuleConfig{
+    var isApp = true
+}

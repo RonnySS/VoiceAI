@@ -22,7 +22,10 @@ android {
 }
 
 dependencies {
-    implementation(DependenciesConfig.KTX_CORE)
-    implementation(DependenciesConfig.APP_COMPAT)
-    implementation(DependenciesConfig.MATERIAL)
+    api(DependenciesConfig.KTX_CORE)
+    api(DependenciesConfig.APP_COMPAT)
+    api(DependenciesConfig.MATERIAL)
+    //module lib
+    api(project(":lib_network"))
+    api(project(":lib_voice"))
 }

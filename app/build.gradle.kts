@@ -58,8 +58,21 @@ android {
 
 dependencies {
 
-    implementation(DependenciesConfig.KTX_CORE)
-    implementation(DependenciesConfig.APP_COMPAT)
-    implementation(DependenciesConfig.MATERIAL)
+//    implementation(DependenciesConfig.KTX_CORE)
 //    implementation(DependenciesConfig.APP_COMPAT)
+//    implementation(DependenciesConfig.MATERIAL)
+    implementation(project(":lib_base"))
+
+    if(!ModuleConfig.isApp){
+        //if this module is not a "library"
+        implementation(":module_app_manager")
+        implementation(":module_constellation")
+        implementation(":module_developer")
+        implementation(":module_joke")
+        implementation(":module_map")
+        implementation(":module_setting")
+        implementation(":module_voice_setting")
+        implementation(":module_weather")
+
+    }
 }
