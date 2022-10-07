@@ -22,5 +22,13 @@ object DependenciesConfig{
 }
 
 object ModuleConfig{
-    var isApp = true
+    var isApp = false
+    const val MODULE_APP_MANAGER = "com.imooc.module_app_manager"
+    const val MODULE_CONSTELLATION = "com.imooc.module_constellation"
+    const val MODULE_DEVELOPER = "com.imooc.module_developer"
+    const val MODULE_JOKE = "com.imooc.module_joke"
+    const val MODULE_MAP = "com.imooc.module_map"
+    const val MODULE_SETTING = "com.imooc.module_setting"
+    const val MODULE_VOICE_SETTING = "com.imooc.module_voice_setting"
+    const val MODULE_WEATHER = "com.imooc.module_weather"
 }

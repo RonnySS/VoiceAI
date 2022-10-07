@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20572916666666666" />
+        <entry key="module_app_manager/src/main/res/layout/activity_app_manager.xml" value="0.21979166666666666" />
+        <entry key="module_app_manager/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2323076923076923" />
+        <entry key="module_app_manager/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2323076923076923" />
+        <entry key="module_constellation/src/main/res/layout/activity_constellation.xml" value="0.20572916666666666" />
       </map>
     </option>
   </component>

@@ -1,6 +1,11 @@
 plugins {
-    id("com.android.library")
+    if(ModuleConfig.isApp){
+        id("com.android.application")
+    }else{
+        id("com.android.library")
+    }
     kotlin("android")
+    id("kotlin-android")
 }
 
 android {
@@ -8,19 +13,37 @@ android {
     buildToolsVersion = AppConfig.buildToolsVersion
 
     defaultConfig {
+        if(ModuleConfig.isApp){
+            applicationId = ModuleConfig.MODULE_SETTING
+            versionCode = AppConfig.versionCode
+            versionName = AppConfig.versionName
+        }else{
+            version = AppConfig.versionCode
+        }
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
-        version = AppConfig.versionCode
     }
-
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "roguard-rules.pro")
         }
     }
+
+    sourceSets{
+        getByName("main"){
+            if(ModuleConfig.isApp){
+                manifest.srcFile("src/main/manifest/AndroidManifest.xml")
+            }else{
+                manifest.srcFile("src/main/AndroidManifest.xml")
+            }
+        }
+    }
 }
 
 dependencies {
     implementation(project(":lib_base"))
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("com.google.android.material:material:1.3.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
 }
