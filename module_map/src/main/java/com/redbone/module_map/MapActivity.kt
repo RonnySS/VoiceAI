@@ -1,8 +1,7 @@
 package com.redbone.module_map
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.redbone.lib_base.BaseActivity
+import com.redbone.lib_base.base.BaseActivity
 
 class MapActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

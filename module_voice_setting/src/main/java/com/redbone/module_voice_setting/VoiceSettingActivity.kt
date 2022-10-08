@@ -1,8 +1,7 @@
 package com.redbone.module_voice_setting
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.redbone.lib_base.BaseActivity
+import com.redbone.lib_base.base.BaseActivity
 
 class VoiceSettingActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

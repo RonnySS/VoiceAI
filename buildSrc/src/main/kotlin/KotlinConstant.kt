@@ -19,10 +19,11 @@ object DependenciesConfig{
     const val APP_COMPAT = "androidx.appcompat:appcompat:1.2.0"
     const val KTX_CORE = "androidx.core:core-ktx:1.3.2"
     const val MATERIAL = "com.google.android.material:material:1.3.0"
+    const val EVENT_BUS = "org.greenrobot:eventbus:3.2.0"
 }
 
 object ModuleConfig{
-    var isApp = false
+    var isApp = true
     const val MODULE_APP_MANAGER = "com.imooc.module_app_manager"
     const val MODULE_CONSTELLATION = "com.imooc.module_constellation"
     const val MODULE_DEVELOPER = "com.imooc.module_developer"

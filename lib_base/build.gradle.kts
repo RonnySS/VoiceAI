@@ -28,4 +28,5 @@ dependencies {
     //module lib
     api(project(":lib_network"))
     api(project(":lib_voice"))
+    api(DependenciesConfig.EVENT_BUS)
 }

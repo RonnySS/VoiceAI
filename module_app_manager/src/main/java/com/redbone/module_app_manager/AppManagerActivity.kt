@@ -2,7 +2,7 @@ package com.redbone.module_app_manager
 
 import android.os.Bundle
 import android.os.PersistableBundle
-import com.redbone.lib_base.BaseActivity
+import com.redbone.lib_base.base.BaseActivity
 
 class AppManagerActivity : BaseActivity() {
 

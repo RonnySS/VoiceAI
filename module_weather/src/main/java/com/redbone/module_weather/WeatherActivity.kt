@@ -1,8 +1,7 @@
 package com.redbone.module_weather
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.redbone.lib_base.BaseActivity
+import com.redbone.lib_base.base.BaseActivity
 
 class WeatherActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
