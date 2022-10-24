@@ -6,6 +6,8 @@ plugins {
     }
 
     kotlin("android")
+    kotlin("kapt")
+    id("kotlin-android")
 }
 
 android {
@@ -14,14 +16,28 @@ android {
 
     defaultConfig {
         if(ModuleConfig.isApp){
-            applicationId = ModuleConfig.MODULE_APP_MANAGER
-            versionCode = AppConfig.versionCode
-            versionName = AppConfig.versionName
+
+            print("这里进行了111")
+//            applicationId = ModuleConfig.MODULE_APP_MANAGER
+//            versionCode = AppConfig.versionCode
+//            versionName = AppConfig.versionName
         }else{
+            print("这里进行了222")
             version = AppConfig.versionCode
         }
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments(mapOf("AROUTER_MODULE_NAME" to project.name))
+            }
+        }
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.name)
+            }
+        }
     }
 
     buildTypes {
@@ -44,4 +60,8 @@ android {
 
 dependencies {
     implementation(project(":lib_base"))
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("com.google.android.material:material:1.3.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+    kapt(DependenciesConfig.AROUTER_COMPILER)
 }

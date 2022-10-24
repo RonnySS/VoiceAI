@@ -3,6 +3,10 @@
     package="com.redbone.module_app_manager">
 
     <application>
-        <activity android:name=".AppManagerActivity"/>
+        <activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity android:name=".AppManagerActivity" />
     </application>
+
 </manifest>

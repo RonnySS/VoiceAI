@@ -20,10 +20,14 @@ object DependenciesConfig{
     const val KTX_CORE = "androidx.core:core-ktx:1.3.2"
     const val MATERIAL = "com.google.android.material:material:1.3.0"
     const val EVENT_BUS = "org.greenrobot:eventbus:3.2.0"
+
+    const val AROUTER = "com.alibaba:arouter-api:1.5.2"
+    const val AROUTER_COMPILER = "com.alibaba:arouter-compiler:1.5.2"
+    const val BRVAH_ADAPT = "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.8"
 }
 
 object ModuleConfig{
-    var isApp = true
+    var isApp = false
     const val MODULE_APP_MANAGER = "com.imooc.module_app_manager"
     const val MODULE_CONSTELLATION = "com.imooc.module_constellation"
     const val MODULE_DEVELOPER = "com.imooc.module_developer"

@@ -5,6 +5,7 @@ plugins {
         id("com.android.library")
     }
     kotlin("android")
+    kotlin("kapt")
     id("kotlin-android")
 }
 
@@ -14,14 +15,25 @@ android {
 
     defaultConfig {
         if(ModuleConfig.isApp){
-            applicationId = ModuleConfig.MODULE_DEVELOPER
-            versionCode = AppConfig.versionCode
-            versionName = AppConfig.versionName
+//            applicationId = ModuleConfig.MODULE_DEVELOPER
+//            versionCode = AppConfig.versionCode
+//            versionName = AppConfig.versionName
         }else{
             version = AppConfig.versionCode
         }
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments(mapOf("AROUTER_MODULE_NAME" to project.name))
+            }
+        }
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.name)
+            }
+        }
     }
 
     buildTypes {
@@ -47,4 +59,6 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.2.0")
     implementation("com.google.android.material:material:1.3.0")
     implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+    kapt(DependenciesConfig.AROUTER_COMPILER)
+
 }
