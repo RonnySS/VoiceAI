@@ -9,7 +9,7 @@ class InitService : IntentService("InitService") {
 
     override fun onHandleIntent(intent: Intent?) {
         Log.d("TAG", "执行了：onHandleIntent: ")
-        NotificationHelper.initHelper(this )
+
     }
 
 }

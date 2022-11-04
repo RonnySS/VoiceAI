@@ -10,6 +10,9 @@ android {
     compileSdk = AppConfig.compileSdk
     buildToolsVersion = AppConfig.buildToolsVersion
 
+    viewBinding {
+        isEnabled = true
+    }
     defaultConfig {
         applicationId = AppConfig.applicationId
         minSdk = AppConfig.minSdk
@@ -56,7 +59,6 @@ android {
             }
         }
     }
-
     //依赖操作
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_12
@@ -76,6 +78,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.2.0")
     implementation("com.google.android.material:material:1.3.0")
     implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+//    implementation("com.yanzhenjie:permission:2.0.3")
 
     if(!ModuleConfig.isApp){
         //if this module is not a "library"

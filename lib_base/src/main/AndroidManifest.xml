@@ -2,10 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.redbone.lib_base">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <application>
         <service
             android:name=".service.InitService"
             android:exported="false" />
+        <meta-data
+            android:name="com.baidu.speech.APP_ID"
+            android:value="28039688"/>
+
+        <meta-data
+            android:name="com.baidu.speech.API_KEY"
+            android:value="EIR5gQbkCCoVHZ9d9pT05RSz"/>
+
+        <meta-data
+            android:name="com.baidu.speech.SECRET_KEY"
+            android:value="Pycov1O4ZUmsGxFtLoGgt7l0M14WxGLD"/>
+
+
+
     </application>
 
 </manifest>

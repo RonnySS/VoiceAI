@@ -43,6 +43,7 @@ dependencies {
     api(project(":lib_voice"))
     api(DependenciesConfig.EVENT_BUS)
     api(DependenciesConfig.BRVAH_ADAPT)
+    api(DependenciesConfig.PERMISSION_X)
 
     //Arouter
     api(DependenciesConfig.AROUTER)

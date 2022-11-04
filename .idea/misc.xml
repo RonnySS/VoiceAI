@@ -17,6 +17,7 @@
         <entry key="module_map/src/main/res/layout/activity_map.xml" value="0.20625" />
         <entry key="module_setting/src/main/res/layout/activity_setting.xml" value="0.20625" />
         <entry key="module_voice_setting/src/main/res/layout/activity_voice_setting.xml" value="0.20625" />
+        <entry key="module_voice_setting/src/main/res/layout/string_item.xml" value="0.2971014492753623" />
         <entry key="module_weather/src/main/res/layout/activity_weather.xml" value="0.20625" />
       </map>
     </option>

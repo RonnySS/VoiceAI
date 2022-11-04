@@ -14,6 +14,9 @@ android {
     compileSdk = AppConfig.compileSdk
     buildToolsVersion = AppConfig.buildToolsVersion
 
+    viewBinding {
+        isEnabled = true
+    }
     defaultConfig {
         if(ModuleConfig.isApp){
 

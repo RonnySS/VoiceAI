@@ -1,7 +1,8 @@
 package com.redbone.module_developer
 
-import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alibaba.android.arouter.facade.annotation.Route
@@ -11,17 +12,16 @@ import com.chad.library.adapter.base.listener.OnItemChildClickListener
 import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.redbone.lib_base.base.BaseActivity
 import com.redbone.lib_base.helper.ARouterHelper
+import com.redbone.lib_voice.manager.VoiceManager
+import com.redbone.lib_voice.tts.VoiceTTS
+import com.redbone.module_developer.databinding.ActivityDeveloperBinding
 
 @Route(path = ARouterHelper.PATH_DEVELOPER)
-class DeveloperActivity : BaseActivity() {
+class DeveloperActivity : BaseActivity<ActivityDeveloperBinding>() {
 
     private val mTypeTitle = ItemType.TITLE.itemType
     private val mTypeContent = ItemType.CONTENT.itemType
     private val mList = ArrayList<DeveloperListData>()
-
-    override fun getLayoutId(): Int {
-        return R.layout.activity_developer
-    }
 
     override fun getTitleText(): String {
         return getString(R.string.app_title_developer)
@@ -56,8 +56,51 @@ class DeveloperActivity : BaseActivity() {
         recyclerView.adapter = mAdapter
         mAdapter.setOnItemClickListener(object :OnItemClickListener{
             override fun onItemClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
-                startForActivity(position)
+                Log.d("TAG", "onItemClick: ")
+                when(position){
+                    1 -> ARouter.getInstance().build(ARouterHelper.PATH_APP_MANAGER).navigation()
+                    2 -> ARouter.getInstance().build(ARouterHelper.PATH_CONSTELLATION).navigation()
+                    3 -> ARouter.getInstance().build(ARouterHelper.PATH_JOKE).navigation()
+                    4 -> ARouter.getInstance().build(ARouterHelper.PATH_MAP).navigation()
+                    5 -> ARouter.getInstance().build(ARouterHelper.PATH_SETTING).navigation()
+                    6 -> ARouter.getInstance().build(ARouterHelper.PATH_VOICE_SETTING).navigation()
+                    7 -> ARouter.getInstance().build(ARouterHelper.PATH_WEATHER).navigation()
 
+
+                    9 -> VoiceManager.startAsr()
+                    10 -> VoiceManager.stopAsr()
+                    11 -> VoiceManager.cancelAsr()
+                    12 -> VoiceManager.releaseAsr()
+
+                    14 -> {
+                        Log.i("","")
+                        
+                        VoiceManager.startWakeUp()
+                    }
+                    15 -> {
+                        VoiceManager.stopWakeUp()
+                    }
+
+
+                    20 -> {
+                        Log.d("TAG", "onItemClick:21s ")
+                        VoiceManager.start("你好，我是小爱同学，很高兴认识你",object :VoiceTTS.OnTTSResultListener{
+                            override fun ttsEnd() {
+                                Log.d("TAG", "ttsEnd:说完了 ")
+                                runOnUiThread {
+                                    Toast.makeText(this@DeveloperActivity, "sss", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+
+                        })
+                    }
+                    21 -> {
+                        VoiceManager.pause()
+                    }
+                    22 -> {VoiceManager.resume()}
+                    23 -> {VoiceManager.stop()}
+                    24 -> {VoiceManager.release()}
+                }
             }
         })
 
@@ -69,15 +112,7 @@ class DeveloperActivity : BaseActivity() {
     }
 
     private fun startForActivity(position:Int){
-        when(position){
-            1 -> ARouter.getInstance().build(ARouterHelper.PATH_APP_MANAGER).navigation()
-            2 -> ARouter.getInstance().build(ARouterHelper.PATH_CONSTELLATION).navigation()
-            3 -> ARouter.getInstance().build(ARouterHelper.PATH_JOKE).navigation()
-            4 -> ARouter.getInstance().build(ARouterHelper.PATH_MAP).navigation()
-            5 -> ARouter.getInstance().build(ARouterHelper.PATH_SETTING).navigation()
-            6 -> ARouter.getInstance().build(ARouterHelper.PATH_VOICE_SETTING).navigation()
-            7 -> ARouter.getInstance().build(ARouterHelper.PATH_WEATHER).navigation()
 
-        }
+
     }
 }

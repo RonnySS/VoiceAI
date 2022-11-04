@@ -4,10 +4,12 @@ import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewbinding.ViewBinding
+import com.wasu.cbn.base.viewbinding.inflateBindingWithGeneric
 
-abstract class BaseActivity : AppCompatActivity()  {
+abstract class BaseActivity<E:ViewBinding> : AppCompatActivity()  {
+    lateinit var binding: E
 
-    abstract fun getLayoutId():Int
 
     abstract fun getTitleText():String
 
@@ -18,7 +20,8 @@ abstract class BaseActivity : AppCompatActivity()  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(getLayoutId())
+        binding = this.inflateBindingWithGeneric(layoutInflater)
+        setContentView(binding.root)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
             supportActionBar?.let {
                 it.title = getTitleText()

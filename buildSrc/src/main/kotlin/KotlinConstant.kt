@@ -24,6 +24,7 @@ object DependenciesConfig{
     const val AROUTER = "com.alibaba:arouter-api:1.5.2"
     const val AROUTER_COMPILER = "com.alibaba:arouter-compiler:1.5.2"
     const val BRVAH_ADAPT = "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.8"
+    const val PERMISSION_X = "com.guolindev.permissionx:permissionx:1.7.1"
 }
 
 object ModuleConfig{

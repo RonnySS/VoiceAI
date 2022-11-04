@@ -13,6 +13,10 @@ android {
     compileSdk = AppConfig.compileSdk
     buildToolsVersion = AppConfig.buildToolsVersion
 
+    viewBinding {
+        isEnabled = true
+    }
+
     defaultConfig {
         if(ModuleConfig.isApp){
 //            applicationId = ModuleConfig.MODULE_VOICE_SETTING
@@ -35,6 +39,8 @@ android {
             }
         }
     }
+
+
 
     buildTypes {
         getByName("release") {
