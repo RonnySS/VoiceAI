@@ -20,6 +20,7 @@ class JokeActivity : BaseActivity() {
     }
 
     //随便写一点注释
+    //认真写的注释
     override fun isShowBack(): Boolean {
         return true
     }
